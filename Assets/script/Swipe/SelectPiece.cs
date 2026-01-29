@@ -1,16 +1,20 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using System.Threading.Tasks;
 public class SelectPiece : MonoBehaviour
     , IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
     private Collider2D _collider;
     //===設定===
+    [SerializeField, Header("グリッド")] Grid _grid;
     [SerializeField, Header("選択可能か")] bool _isSeletable = true;
-    [SerializeField, Header("スライ可能か検知する際の距離")] float _swipeThreshold = 30f;
+    [SerializeField, Header("スライド可能か検知する際の距離")] float _swipeThreshold = 30f;
+    [SerializeField, Header("スライドする距離")] float _swipeDuration = 2f;
 
     //===状態===
     private bool _isSelected;
+    private bool _isMoving = false;
     private Vector2 _startPos;
     /// <summary>/// 決めた方向のベクター/// </summary>
     private Vector2 _decidedDirection;
@@ -20,6 +24,7 @@ public class SelectPiece : MonoBehaviour
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
+        _grid = GetComponentInParent<Grid>();
     }
 
     // ===== Pointer =====
@@ -40,13 +45,13 @@ public class SelectPiece : MonoBehaviour
     {
         if (!_isSelected) return;
 
-        Vector2 dir = GetEdgeDirection(eventData.position);
+        Vector3 dir = GetEdgeDirection(eventData.position);
 
-        if (dir != Vector2.zero)
+        if (dir != Vector3.zero)
         {
             Debug.Log($"{dir}にスライド開始");
-            this.transform.DOMove(dir*2f,1f);
-
+            if (_isMoving) return;
+            MoveTile(dir);
         }
         Deselect();
     }
@@ -62,7 +67,7 @@ public class SelectPiece : MonoBehaviour
         if (!_isSelected) return;
 
         _isSelected = false;
-        StopSelectAnimaton();
+        StopSelectAnimation();
     }
     /// <summary>
     /// 4方向の内どの方向かを受け取る
@@ -89,8 +94,18 @@ public class SelectPiece : MonoBehaviour
     {
         Debug.Log("後でアニメーション実装");
     }
-    private void StopSelectAnimaton()
+    private void StopSelectAnimation()
     {
         Debug.Log("アニメーションを消す");
+    }
+    //===Grid===
+    private async Task MoveTile(Vector3 dir)
+    {
+        _isMoving = true;
+        Vector3Int cellPos = _grid.WorldToCell(transform.position);
+        Vector3Int swipeCellPos = new Vector3Int((int)dir.x, (int)dir.y, 0) + cellPos;//キャスト不可なんで
+        Vector3 swipePos = _grid.GetCellCenterWorld(swipeCellPos);
+        await transform.DOMove(swipePos, 1f).AsyncWaitForCompletion();
+        _isMoving = false;
     }
 }
