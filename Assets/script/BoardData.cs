@@ -2,7 +2,7 @@ using UnityEngine;
 /// <summary>
 /// 盤面情報の管理のみをするクラス
 /// </summary>
-class BoardData
+public class BoardData
 {
     /// <summary>/// 空きセルの位置/// </summary>
     public Vector2Int EmptyCell { get; private set; }

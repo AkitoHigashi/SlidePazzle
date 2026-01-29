@@ -7,23 +7,45 @@ public class TileInput : MonoBehaviour,
     IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
     private Collider2D _collider;
+    private TileController _tileController;
+
+    private bool _isSelected;
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
     }
+    private void Start()
+    {
+        _tileController = GetComponent<TileController>();
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        _isSelected = true;
+        Debug.Log("選択可能中");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (!_isSelected) return;
+
         Vector3 dir = GetEdgeDirection(eventData.position);
+        if (dir != Vector3.zero)
+        {
+            Debug.Log($"{dir}にスライド開始");
+            _tileController.OnSwipe(dir);
+        }
+        Deselect();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        Deselect();
+    }
+    private void Deselect()
+    {
+        if (!_isSelected) return;
+
+        _isSelected = false;
     }
     /// <summary>
     /// 4方向の内どの方向かを受け取る
