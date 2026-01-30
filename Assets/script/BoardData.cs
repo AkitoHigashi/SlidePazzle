@@ -23,7 +23,7 @@ public class BoardData
     }
 
     /// <summary>
-    /// タイルの位置を設定する
+    /// タイルの位置を登録する
     /// </summary>
     /// <param name="pos"></param>
     /// <param name="tileController"></param>

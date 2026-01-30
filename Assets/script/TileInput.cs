@@ -60,7 +60,7 @@ public class TileInput : MonoBehaviour,
 
         if (screenPos.x > max.x) return Vector2.right;//‚æ‚è‰E‚©
         if (screenPos.x < min.x) return Vector2.left;//‚æ‚è¶‚©
-        if (screenPos.y > min.y) return Vector2.up;//‚æ‚èã‚©
+        if (screenPos.y > max.y) return Vector2.up;//‚æ‚èã‚©
         if (screenPos.y < min.y) return Vector2.down;//‚æ‚è‰º‚©
 
         return Vector2.zero;

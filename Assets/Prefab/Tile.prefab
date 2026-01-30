@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 683692802432954171}
   - component: {fileID: 1067569253512500516}
   - component: {fileID: 2168552379512779305}
+  - component: {fileID: -6306403824958270172}
+  - component: {fileID: 8177591333495804037}
   m_Layer: 0
-  m_Name: raion_0
+  m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,3 +139,27 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.85, y: 0.85}
   m_EdgeRadius: 0
+--- !u!114 &-6306403824958270172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728879351900167161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de92be648e2f545419f15a71a5da4997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TileInput
+--- !u!114 &8177591333495804037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728879351900167161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8bbc35d3a71cb439979f18ad48c2d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TileController

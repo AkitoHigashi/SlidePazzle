@@ -738,24 +738,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridPlacer
   _sprites:
-  - {fileID: -361229581, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 315777057, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 1763144383, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 1119366351, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 294582265, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: -633811739, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: -417981248, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: -1232574354, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 1597859433, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 2030865311, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 1353905049, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: -1559878499, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 104376282, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: 1076640090, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
-  - {fileID: -796947240, guid: 8610f5ad04aeb4f458859ab90b0477ab, type: 3}
+  - {fileID: 627337428594524117, guid: ab24617b8a4c271489088d82ca774c19, type: 3}
+  - {fileID: 1200942112, guid: ab24617b8a4c271489088d82ca774c19, type: 3}
+  - {fileID: 1494500473, guid: ab24617b8a4c271489088d82ca774c19, type: 3}
+  - {fileID: -493304638, guid: ab24617b8a4c271489088d82ca774c19, type: 3}
+  - {fileID: -921134435, guid: ab24617b8a4c271489088d82ca774c19, type: 3}
+  - {fileID: 784146058, guid: ab24617b8a4c271489088d82ca774c19, type: 3}
+  - {fileID: -310770553, guid: ab24617b8a4c271489088d82ca774c19, type: 3}
+  - {fileID: 1338376026, guid: ab24617b8a4c271489088d82ca774c19, type: 3}
   _prefab: {fileID: 3728879351900167161, guid: 8e433ba26d020414d9f4fe72e5574abe, type: 3}
-  _col: 4
-  _row: 4
+  _col: 3
+  _row: 3
 --- !u!1 &2094357761
 GameObject:
   m_ObjectHideFlags: 0

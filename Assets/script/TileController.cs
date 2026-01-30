@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class TileController : MonoBehaviour
@@ -7,6 +6,10 @@ public class TileController : MonoBehaviour
 
     private BoardService _boardService;
 
+    /// <summary>
+    /// ボードサービスと接続する
+    /// </summary>
+    /// <param name="boardService"></param>
     public void Initialize(BoardService boardService)
     {
         _boardService = boardService;
